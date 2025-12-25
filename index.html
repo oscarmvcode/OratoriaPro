@@ -10,35 +10,159 @@
   --fondo:#0f172a; --tarjeta:#1e293b; --primario:#a855f7; --exito:#22c55e;
   --alerta:#f59e0b; --error:#ef4444; --texto:#f1f5f9;
 }
-body{background:var(--fondo);color:var(--texto);font-family:'Inter',sans-serif;padding:20px;}
-.app-card{max-width:1200px;margin:auto;background:var(--tarjeta);border-radius:25px;padding:35px;border:1px solid rgba(255,255,255,0.1);box-shadow:0 25px 60px rgba(0,0,0,0.5);}
-.header-stats{display:flex;justify-content:space-around;margin-bottom:25px;gap:15px;}
-.score-circle{width:140px;height:140px;border-radius:50%;border:10px solid #334155;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:42px;font-weight:900;transition:all 0.2s ease;}
+
+body{
+  background:var(--fondo);
+  color:var(--texto);
+  font-family:'Inter',sans-serif;
+  padding:15px;
+}
+
+.app-card{
+  max-width:900px;
+  margin:auto;
+  background:var(--tarjeta);
+  border-radius:25px;
+  padding:30px;
+  border:1px solid rgba(255,255,255,0.1);
+  box-shadow:0 20px 50px rgba(0,0,0,0.5);
+}
+
+.header-stats{
+  display:flex;
+  justify-content:space-around;
+  margin-bottom:20px;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.score-circle{
+  width:140px;
+  height:140px;
+  border-radius:50%;
+  border:10px solid #334155;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  font-size:42px;
+  font-weight:900;
+  transition:all 0.2s ease;
+}
+
 .score-label{font-size:0.65rem;text-transform:uppercase;opacity:0.7;}
-.stat-badge{background:rgba(255,255,255,0.05);padding:12px;border-radius:15px;text-align:center;border:1px solid rgba(255,255,255,0.1);flex:1;}
+
+.stat-badge{
+  background:rgba(255,255,255,0.05);
+  padding:12px;
+  border-radius:15px;
+  text-align:center;
+  border:1px solid rgba(255,255,255,0.1);
+  flex:1;
+}
+
 .stat-num{display:block;font-size:1.5rem;font-weight:800;color:var(--primario);}
 .stat-desc{font-size:0.65rem;text-transform:uppercase;color:#94a3b8;}
-.advice-panel{background:rgba(56,189,248,0.1);border:1px solid rgba(56,189,248,0.2);border-radius:15px;padding:15px;margin-bottom:20px;font-size:0.9rem;}
-textarea{width:100%;height:350px;background:rgba(0,0,0,0.2);border:2px solid rgba(255,255,255,0.1);border-radius:20px;padding:20px;color:#fff;font-size:1.1rem;line-height:1.6;outline:none;transition:0.2s;resize:none;}
-textarea:focus{border-color:var(--primario);background:rgba(0,0,0,0.3);}
-.mode-btn, .analysis-level-btn{flex:1;padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);color:#94a3b8;font-weight:700;cursor:pointer;transition:0.2s;}
+
+.advice-panel{
+  background:rgba(56,189,248,0.1);
+  border:1px solid rgba(56,189,248,0.2);
+  border-radius:15px;
+  padding:15px;
+  margin-bottom:20px;
+  font-size:0.9rem;
+}
+
+textarea{
+  width:100%;
+  height:350px;
+  background:rgba(0,0,0,0.2);
+  border:2px solid rgba(255,255,255,0.1);
+  border-radius:20px;
+  padding:20px;
+  color:#fff;
+  font-size:1.1rem;
+  line-height:1.6;
+  outline:none;
+  transition:0.2s;
+  resize:none;
+}
+
+textarea:focus{
+  border-color:var(--primario);
+  background:rgba(0,0,0,0.3);
+}
+
+.mode-btn, .analysis-level-btn{
+  flex:1;
+  padding:12px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.1);
+  background:rgba(255,255,255,0.03);
+  color:#94a3b8;
+  font-weight:700;
+  cursor:pointer;
+  transition:0.2s;
+}
+
 .mode-btn.active{background:var(--primario);color:white;border-color:var(--primario);}
 .analysis-level-btn.active{background:var(--alerta);color:white;border-color:var(--alerta);}
-.pilar-title{font-size:0.75rem;font-weight:800;text-transform:uppercase;color:var(--primario);letter-spacing:1.5px;margin:25px 0 12px;display:flex;align-items:center;gap:10px;}
-.pilar-title::after{content:"";height:1px;flex:1;background:rgba(168,85,247,0.2);}
-.alert-box{padding:12px;border-radius:10px;margin-bottom:8px;border-left:5px solid #475569;background:rgba(255,255,255,0.03);display:flex;align-items:center;gap:12px;font-size:0.85rem;}
+
+.pilar-title{
+  font-size:0.75rem;
+  font-weight:800;
+  text-transform:uppercase;
+  color:var(--primario);
+  letter-spacing:1.5px;
+  margin:25px 0 12px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.pilar-title::after{
+  content:"";
+  height:1px;
+  flex:1;
+  background:rgba(168,85,247,0.2);
+}
+
+.alert-box{
+  padding:12px;
+  border-radius:10px;
+  margin-bottom:8px;
+  border-left:5px solid #475569;
+  background:rgba(255,255,255,0.03);
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-size:0.85rem;
+}
+
 .alert-box.fail{border-left-color:var(--error);background:rgba(239,68,68,0.08);color:#fca5a5;}
 .alert-box.pass{border-left-color:var(--exito);background:rgba(34,197,94,0.08);color:#86efac;}
+
 .pilar-bar{height:15px;border-radius:10px;background:rgba(255,255,255,0.1);margin-bottom:15px;overflow:hidden;}
 .pilar-fill{height:100%;border-radius:10px;width:0%;transition:width 0.5s;}
 .pilar-label{font-size:0.75rem;margin-bottom:5px;}
+
+/* ==== Responsive ==== */
+@media (max-width:768px){
+  .header-stats{flex-direction:column;gap:10px;}
+  .stat-badge{flex:none;width:100%;text-align:center;}
+  .score-circle{width:120px;height:120px;font-size:36px;}
+  .app-card{padding:20px;border-radius:20px;}
+  textarea{height:250px;font-size:1rem;padding:15px;}
+  .mode-btn, .analysis-level-btn{padding:10px;font-size:0.85rem;}
+  .pilar-title{font-size:0.7rem;}
+  .alert-box{font-size:0.8rem;padding:10px;}
+}
 </style>
 </head>
 <body>
 <div class="app-card">
-  <div class="d-flex justify-content-between align-items-center mb-4">
+  <div class="d-flex flex-column flex-md-row justify-content-between align-items-center mb-4 gap-3">
     <h3 class="fw-bold m-0">🎙️ Oratoria<span style="color:var(--primario)">Pro</span></h3>
-    <button class="btn btn-sm btn-outline-danger px-3" onclick="resetApp()">REINICIAR</button>
+    <button class="btn btn-sm btn-outline-danger px-3 w-100 w-md-auto" onclick="resetApp()">REINICIAR</button>
   </div>
 
   <div class="advice-panel" id="advicePanel">💡 Analiza tu discurso según modo y nivel.</div>
@@ -49,14 +173,14 @@ textarea:focus{border-color:var(--primario);background:rgba(0,0,0,0.3);}
     <div class="stat-badge"><span id="statTime" class="stat-num">0:00</span><span class="stat-desc">Minutos</span></div>
   </div>
 
-  <div class="d-flex gap-2 mb-2">
+  <div class="d-flex flex-column flex-md-row gap-2 mb-2">
     <button id="btn-acad" class="mode-btn active" onclick="setMode('acad')">ACADÉMICO</button>
     <button id="btn-corp" class="mode-btn" onclick="setMode('corp')">CORPORATIVO</button>
     <button id="btn-polit" class="mode-btn" onclick="setMode('polit')">POLÍTICO</button>
     <button id="btn-sales" class="mode-btn" onclick="setMode('sales')">VENTAS</button>
   </div>
 
-  <div class="d-flex gap-2 mb-4">
+  <div class="d-flex flex-column flex-md-row gap-2 mb-4">
     <button id="lvl-suave" class="analysis-level-btn active" onclick="setLevel('suave')">SUAVE</button>
     <button id="lvl-estricto" class="analysis-level-btn" onclick="setLevel('estricto')">ESTRUCTO</button>
   </div>
@@ -87,11 +211,11 @@ textarea:focus{border-color:var(--primario);background:rgba(0,0,0,0.3);}
 </div>
 
 <script>
+// ==== Script completo sin cambios, ya optimizado ====
 let currentMode='acad';
 let analysisLevel='suave';
 const LEVEL_FACTOR={suave:0.7,estricto:1.0};
 const MAX_ERRORS_DISPLAY=5;
-
 const RULES={
 acad:{ethos:["investigación","datos","estudios","referencias","citado","metodología","profesor","académico"],
       pathos:["interés","curiosidad","ejemplo","reflexiona","analiza","descubre"],
@@ -112,8 +236,7 @@ sales:{ethos:["cliente","beneficio","garantía","confianza","experiencia","resul
        pathos:["emocion","entusiasmo","urgencia","oportunidad","transformación","pasión","sueño"],
        deboleza:["tal vez","supongo","quizás","no sé","creo que","magia"],
        mule:["eh","mmm","este","digamos","o sea","obviamente","tipo"],
-       poder:["transformamos","decidimos","impulsamos","creamos","actuamos","lideramos","ejecutamos"]}
-};
+       poder:["transformamos","decidimos","impulsamos","creamos","actuamos","lideramos","ejecutamos"]}};
 
 function setMode(m){
   currentMode=m;
@@ -136,16 +259,13 @@ function resetApp(){document.getElementById('box').value=''; analyze();}
 function analyze(){
   const pillarIds=['pilar-tono','pilar-mule','pilar-verbos','pilar-ritmo','pilar-emocion'];
   pillarIds.forEach(id=>document.getElementById(id).innerHTML='');
-
   const raw=document.getElementById('box').value;
   const text=raw.toLowerCase();
   const words=raw.trim().split(/\s+/).filter(w=>w.length>0);
   let score=100;
   if(words.length===0){updateUI(100,0,"0:00"); updateBars([100,100,100,100,100]); return;}
-
   const rules=RULES[currentMode];
   const factor=LEVEL_FACTOR[analysisLevel];
-
   const pilarData=[
     {id:'pilar-tono',errs:[],checks:[...rules.deboleza],msg:"Equilibrio retórico óptimo."},
     {id:'pilar-mule',errs:[],checks:[...rules.mule],msg:"Fluidez impecable."},
@@ -156,64 +276,35 @@ function analyze(){
 
   // Persuasión y debilidad
   rules.deboleza.forEach(d=>{
-    if(text.includes(d)){
-      pilarData[0].errs.push(`FUGA DE AUTORIDAD: "${d}" debilita tu discurso.`);
-      score -= 15*factor;
-    }
+    if(text.includes(d)){pilarData[0].errs.push(`FUGA DE AUTORIDAD: "${d}" debilita tu discurso.`); score -= 15*factor;}
   });
   const hasEthos=rules.ethos.some(p=>text.includes(p));
   const hasPathos=rules.pathos.some(p=>text.includes(p));
   if(words.length>10){
-    if(!hasEthos){
-      pilarData[0].errs.push("Falta Ethos.");
-      score -= 10*factor;
-    }
-    if(!hasPathos){
-      pilarData[0].errs.push("Falta Pathos.");
-      score -= 10*factor;
-    }
+    if(!hasEthos){pilarData[0].errs.push("Falta Ethos."); score -= 10*factor;}
+    if(!hasPathos){pilarData[0].errs.push("Falta Pathos."); score -= 10*factor;}
   }
   if(analysisLevel==='estricto'){
-    rules.pathos.forEach(p=>{
-      if(!text.includes(p)) pilarData[4].errs.push(`Considera usar "${p}" para Pathos.`);
-    });
+    rules.pathos.forEach(p=>{if(!text.includes(p)) pilarData[4].errs.push(`Considera usar "${p}" para Pathos.`);});
   }
 
   // Fluidez
-  rules.mule.forEach(m=>{
-    if(new RegExp("\\b"+m+"\\b","gi").test(text)){
-      pilarData[1].errs.push(`Elimina "${m}" para mejorar fluidez.`);
-      score -= 8*factor;
-    }
-  });
+  rules.mule.forEach(m=>{if(new RegExp("\\b"+m+"\\b","gi").test(text)){pilarData[1].errs.push(`Elimina "${m}" para mejorar fluidez.`); score -= 8*factor;}});
 
   // Verbos de acción
   const hasPoder=rules.poder.some(v=>text.includes(v));
-  if(!hasPoder && words.length>20){
-    pilarData[2].errs.push("Faltan verbos de acción.");
-    score -= 12*factor;
-  }
+  if(!hasPoder && words.length>20){pilarData[2].errs.push("Faltan verbos de acción."); score -= 12*factor;}
   if(analysisLevel==='estricto'){
-    rules.poder.forEach(v=>{
-      if(!text.includes(v)) pilarData[2].errs.push(`Considera usar el verbo "${v}".`);
-    });
+    rules.poder.forEach(v=>{if(!text.includes(v)) pilarData[2].errs.push(`Considera usar el verbo "${v}".`);});
   }
 
   // Ritmo
   const frases=raw.split(/[.!?]+/).filter(f=>f.trim().length>5);
   const limite=currentMode==='sales'?12:18;
-  frases.forEach(f=>{
-    if(f.trim().split(/\s+/).length>limite){
-      pilarData[3].errs.push("Frase muy larga.");
-      score -= 10*factor;
-    }
-  });
+  frases.forEach(f=>{if(f.trim().split(/\s+/).length>limite){pilarData[3].errs.push("Frase muy larga."); score -= 10*factor;}});
 
   // Conexión emocional
-  if(!hasPathos && words.length>20){
-    pilarData[4].errs.push("Falta conexión emocional.");
-    score -= 10*factor;
-  }
+  if(!hasPathos && words.length>20){pilarData[4].errs.push("Falta conexión emocional."); score -= 10*factor;}
 
   // Render
   pilarData.forEach(p=>render(p.id,p.errs,p.msg));
